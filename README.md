@@ -30,3 +30,17 @@ If not, serialization/deserialization errors will occur.
   |IF_RECA_TASK|<your_REIS_id>|<your_abap_class_implementing_zcl_reca_reis_task_process>|
   
 
+### Example
+You will find an example in report ```zreisdmoparallel```, class ```zcl_reca_reis_demo_paralleltsk``` and ```zcl_reca_reis_demo_parallel```. To run it just ensure that this REIS report is configured as follows:
+1. add new entry via SM30 in ```V_TIVISREP``` with following values
+
+  ReportID|Report Title |Program name|Structure name |Class Name|Class Name
+  ---------|---------|---------|---------|---------|---------
+  |ZDMOPAR|Info System: Contracts (Demo Parallel)|ZREISDMOPARALLEL|REIS_CN_L|ZCL_RECA_REIS_DEMO_PARALLEL|CL_REIS_VIEW_DEFAULT
+
+2.via SM30 add new entry in ```v_tivcaimpl``` with following values:
+  
+  Interface|Subtype|ImplClass
+  ---------|---------|---------
+  |IF_RECA_TASK|ZDMOPAR|ZCL_RECA_REIS_DEMO_PARALLELTSK|
+  
