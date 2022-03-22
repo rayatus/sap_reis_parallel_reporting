@@ -1,14 +1,22 @@
-class ZCL_RECA_REIS_DEMO_PARALLELTSK definition
-  public
-  final
-  create public .
+CLASS zcl_reca_reis_demo_paralleltsk DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC
+  INHERITING FROM zcl_reca_reis_task_process.
 
-public section.
-protected section.
-private section.
+  PUBLIC SECTION.
+    CONSTANTS mc_reportid TYPE reisrepid VALUE 'ZDMOPAR'.
+    METHODS: get_reportid REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
 CLASS ZCL_RECA_REIS_DEMO_PARALLELTSK IMPLEMENTATION.
+
+
+  METHOD get_reportid.
+    rd_reportid = mc_reportid.
+  ENDMETHOD.
 ENDCLASS.
